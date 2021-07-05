@@ -1,0 +1,143 @@
+@{ Layout = ""; }
+@model Etudiant 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   
+    <!-- Title Page-->
+    <title>Inscription et Réinscription en ligne - eEnsas</title>
+
+    <!-- Icons font CSS-->
+    <link href="../colorlib-regform-5/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="../colorlib-regform-5/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="../colorlib-regform-5/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="../colorlib-regform-5/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <!-- Main CSS-->
+    <link href="../assets/styles/test.css" rel="stylesheet" media="all">
+</head>
+
+<body>
+    <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+        <div class="wrapper wrapper--w790">
+            <div class="card card-5">
+                <div class="card-heading">
+                <h2 class="title">Formulaire d'inscription en ligne </h2>
+<br>
+<div class="row">
+    <div class="col-lg-3 col-md-2"></div>
+    <div class="col-lg-6 col-md-8">
+        <div class="progress" style="height: 20px;">
+            <div class="progress-bar  btn--blue progress-bar-striped active" role="progressbar"
+                 area-valuemin="1" area-valuemax="5" aria-valuenow="1" style="width: 20%;">
+                <strong>Etape1</strong>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-2"></div>
+</div>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        
+                        <div class="form-row m-b-55">
+                            <div class="name">Numero Etudiant(e)</div>
+                            <div class="value">
+                                <div class="row row-space">
+                                    
+                                    <div class="col-6">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="text" name="cin" asp-for="cin" id ="cin"  required>
+
+                                            <label class="label--desc" >CIN</label>
+                                            <label class="label--desc text-danger" >  </label>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="text" name="cne" id ="massar" asp-for="cne" required>
+
+                                            <label class="label--desc">CNE</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                     
+                        <div class="form-row">
+                            <div class="name">Email</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="email" name="email" asp-for="email" id = "email" >
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Mot de passe</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="password" name="password" asp-for="password" id="password" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Confirmation du mot de passe</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="password" name="password_conf" id="password_conf" required>
+                                    <span class="text-danger" id="email_conf_err">
+                                     
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                     
+
+                        
+
+
+                        <div class="row row-space">
+                            <div class="col-md-3"></div>
+                            <div class="col 3">
+                                <a href="#" class="btn btn--radius-2 btn-secondary">Effacer</a>
+                            </div>
+
+                            <div class="col 3">
+                                <button type="submit" class="btn btn--radius-2 btn--blue" >Suivant</button>
+                            </div>
+                            <div class="col-md-3"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="../colorlib-regform-5/vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="../colorlib-regform-5/vendor/select2/select2.min.js"></script>
+    <script src="../colorlib-regform-5/vendor/datepicker/moment.min.js"></script>
+    <script src="../colorlib-regform-5/vendor/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->
+    <script src="../colorlib-regform-5/js/global.js"></script>
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
+<!-- end document-->

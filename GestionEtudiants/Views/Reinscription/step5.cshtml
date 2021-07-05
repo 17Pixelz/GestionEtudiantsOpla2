@@ -1,0 +1,167 @@
+@{ Layout = ""; }
+@model Etudiant
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>Inscription et Réinscription en ligne - eEnsas</title>
+
+    <!-- Icons font CSS-->
+    <link href="../colorlib-regform-5/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="../colorlib-regform-5/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="../colorlib-regform-5/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="../colorlib-regform-5/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <!-- Main CSS-->
+    <link href="../assets/styles/test.css" rel="stylesheet" media="all">
+</head>
+
+<body>
+    <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+        <div class="wrapper wrapper--w790">
+            <div class="card card-5">
+                <div class="card-heading">
+                    <h2 class="title">Formulaire d'inscription en ligne </h2>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-3 col-md-2"></div>
+                        <div class="col-lg-6 col-md-8">
+                            <div class="progress" style="height: 20px;">
+                                <div class="progress-bar  btn--blue progress-bar-striped active" role="progressbar"
+                                     area-valuemin="1" area-valuemax="5" aria-valuenow="5" style="width: 100%;">
+                                    <strong>Etape5</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-2"></div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        <div class="row alert alert-danger">
+                            <strong>Attention: </strong> Votre photo doit respecter les contraintes suivantes:
+                            <ul>
+                                <li>La taille maximale de la photo est <strong>2 Mo (2048 Ko)</strong>.</li>
+                                <li>Votre visage doit être bien claire, et sans effets sur la photo</li>
+                                <li>Les extensions autorisés sont: JPG, JPEG et PNG.</li>
+                            </ul>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-md-2"></div>
+
+                            <div class="col-lg-12 mx-auto">
+
+                                <!-- Upload image input-->
+                                <div class="custom-file">
+                                    <input name="picture" id="photo" asp-for="picture" type="file" onchange="readURL(this);" class="custom-file-input">
+                                    <label class="custom-file-label" for="photo">Choose image</label>
+                                </div>
+
+                                <span class="text-danger" id="err">
+                                    <strong>erreur</strong>
+                                </span>
+
+                                <!-- Uploaded image area-->
+                                <p class="font-italic text-info text-center">The image uploaded will be rendered inside the box below.</p>
+                                <br>
+                                <div class="image-area mt-4"><img id="imageResult" src="#" alt="" class="img-fluid rounded shadow-sm mx-auto d-block"></div>
+
+                            </div>
+                            <div class="col-md-2"></div>
+
+                        </div>
+
+                        <script>
+                            function readURL(input) {
+                                if (input.files && input.files[0]) {
+                                    var reader = new FileReader();
+
+                                    reader.onload = function (e) {
+                                        $('#imageResult')
+                                            .attr('src', e.target.result);
+                                    };
+                                    reader.readAsDataURL(input.files[0]);
+                                }
+                            }
+
+                            $(function () {
+                                $('#photo').on('change', function () {
+                                    readURL(input);
+                                });
+                            });
+
+                            /*  ==========================================
+                                SHOW UPLOADED IMAGE NAME
+                            * ========================================== */
+                            var input = document.getElementById('photo');
+                            var infoArea = document.getElementById('upload-label');
+
+                            input.addEventListener('change', showFileName);
+                            function showFileName(event) {
+                                var input = event.srcElement;
+                                var fileName = input.files[0].name;
+                                infoArea.textContent = 'File name: ' + fileName;
+                            }
+                            function verifyForm() {
+                                var img = document.getElementById('photo').value;
+                                if (img.length == 0) {
+                                    document.getElementById('err').innerHTML = '* Une photo est obligatoire!';
+                                    return false;
+                                }
+                                else {
+                                    document.getElementById('err').innerHTML = '';
+                                    return true;
+                                }
+                            }
+                        </script>
+
+
+
+
+                        <div class="row row-space">
+                            <div class="col-md-2"></div>
+                            <div class="col 3">
+                                <a asp-controller="Reinscription" asp-action="step4" class="btn btn--radius-2 btn-secondary">Précédent</a>
+                            </div>
+
+                            <div class="col 3">
+                                <button type="submit" class="btn btn--radius-2 btn--blue">Suivant</button>
+                            </div>
+                            <div class="col-md-3"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="../colorlib-regform-5/vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="../colorlib-regform-5/vendor/select2/select2.min.js"></script>
+    <script src="../colorlib-regform-5/vendor/datepicker/moment.min.js"></script>
+    <script src="../colorlib-regform-5/vendor/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->
+    <script src="../colorlib-regform-5/js/global.js"></script>
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
+<!-- end document-->

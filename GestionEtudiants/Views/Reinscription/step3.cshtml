@@ -1,0 +1,239 @@
+@{ Layout = ""; }
+@model Etudiant
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>Inscription et Réinscription en ligne - eEnsas</title>
+
+    <!-- Icons font CSS-->
+    <link href="../colorlib-regform-5/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="../colorlib-regform-5/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="../colorlib-regform-5/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="../colorlib-regform-5/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="http://www.arabic-keyboard.org/keyboard/keyboard.css">
+    <script type="text/javascript" src="http://www.arabic-keyboard.org/keyboard/keyboard.js" charset="UTF-8"></script>
+    <!-- Main CSS-->
+    <link href="../assets/styles/test.css" rel="stylesheet" media="all">
+</head>
+
+<body>
+    <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+        <div class="wrapper wrapper--w780">
+            <div class="card card-5">
+                <div class="card-heading">
+                    <h2 class="title">Formulaire d'inscription en ligne </h2>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-3 col-md-2"></div>
+                        <div class="col-lg-6 col-md-8">
+                            <div class="progress" style="height: 20px;">
+                                <div class="progress-bar btn--blue progress-bar-striped active" role="progressbar"
+                                     area-valuemin="1" area-valuemax="5" aria-valuenow="3" style="width: 60%;">
+                                    <strong>Etape3</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-2"></div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        <div class="form-row m-b-50">
+                            <div class="name">Pére </div>
+                            <div class="value">
+                                <div class="row row-space">
+                                    <div class="col-6">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="text" id="nom_pere" asp-for="father_name" name="father_name" placeholder="Nom complet du père">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="rs-select2 js-select-simple select--no-search">
+
+                                            <select name="father_job" id="prof_pere" asp-for="father_job" required>
+                                                <option selected disabled>Choisissez la profession de votre père</option>
+                                                <option value="Agriculteur exploitant">Agriculteur exploitant</option>
+                                                <option value="Artisan, Décorateur, Peintre">Artisan, Décorateur, Peintre</option>
+                                                <option value="Autre métier non Renseigné">Autre métier non Renseigné</option>
+                                                <option value="Cadre d'Entreprise, Société (Gérant....">Cadre d'Entreprise, Société (Gérant....</option>
+                                                <option value="Cadre Fonction Publique">Cadre Fonction Publique</option>
+                                                <option value="Chef entreprise, Patron de socité">Chef entreprise, Patron de socité</option>
+                                                <option value="Commerçant et assimilé">Commerçant et assimilé</option>
+                                                <option value="Contremaître, Agent de maîtrise BTP">Contremaître, Agent de maîtrise BTP</option>
+                                                <option value="Décédé">Décédé</option>
+                                                <option value="Eleve,Etudiant">Eleve,Etudiant</option>
+                                                <option value="Employé d'Entreprise, Société, Associat.">Employé d'Entreprise, Société, Associat.</option>
+                                                <option value="Employé Fonction Public, Agent Civil">Employé Fonction Public, Agent Civil</option>
+                                                <option value="Employé Métier de Commerce">Employé Métier de Commerce</option>
+                                                <option value="Ingénieur, Cadre Technique d'Entreprise">Ingénieur, Cadre Technique d'Entreprise</option>
+                                                <option value="Ouvrier Non Qualifié type artisanat">Ouvrier Non Qualifié type artisanat</option>
+                                                <option value="Ouvrier  Non Qualifié type  Industrie">Ouvrier  Non Qualifié type  Industrie</option>
+                                                <option value="Ouvrier Qualifié Industrie">Ouvrier Qualifié Industrie</option>
+                                                <option value="Ouvrier Qualifié Transport, Manutention">Ouvrier Qualifié Transport, Manutention</option>
+                                                <option value="Personne sans activité professionnelle">Personne sans activité professionnelle</option>
+                                                <option value="Policier et militaire">Policier et militaire</option>
+                                                <option value="Professeur, Chercheur, Expert">Professeur, Chercheur, Expert</option>
+                                                <option value="Profession Education (Instituteur, Prof.">Profession Education (Instituteur, Prof.</option>
+                                                <option value="Profession Information, Arts, Spectacles">Profession Information, Arts, Spectacles</option>
+                                                <option value="Profession interm adm et commerc. entrep">Profession interm adm et commerc. entrep</option>
+                                                <option value="Profession Juridique (Juge, Avocat, ..">Profession Juridique (Juge, Avocat, ..</option>
+                                                <option value="Profession libérale">Profession libérale</option>
+                                                <option value="Profession lié à l'agriculture (Fellah,.">Profession lié à l'agriculture (Fellah,.</option>
+                                                <option value="Profession lié à la religion Imam, Fquih">Profession lié à la religion Imam, Fquih</option>
+                                                <option value="Profession Lié à l'Artisanat">Profession Lié à l'Artisanat</option>
+                                                <option value="Profession lié au Transport (Chauffeur..">Profession lié au Transport (Chauffeur..</option>
+                                                <option value="Profession Militaires, Policiers ...">Profession Militaires, Policiers ...</option>
+                                                <option value="Profession Publicité, Cinéma, Théatre...">Profession Publicité, Cinéma, Théatre...</option>
+                                                <option value="Profession Santé (Docteur, Infermier, AS">Profession Santé (Docteur, Infermier, AS</option>
+                                                <option value="Retraité de la Fonction Public">Retraité de la Fonction Public</option>
+                                                <option value="Retraité metier de Commerce">Retraité metier de Commerce</option>
+                                                <option value="Retraité secteur Agricole">Retraité secteur Agricole</option>
+                                                <option value="Sans activité professionnelle">Sans activité professionnelle</option>
+                                                <option value="Technicien, Electricien, Mécanique">Technicien, Electricien, Mécanique</option>
+                                            </select>
+                                            <div class="select-dropdown"></div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row m-b-50">
+                            <div class="name">Mére </div>
+                            <div class="value">
+                                <div class="row row-space">
+                                    <div class="col-6">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="text" id="nom_mere" name="mother_name" asp-for="mother_name" placeholder="Nom complet du mére">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="rs-select2 js-select-simple select--no-search">
+
+                                            <select name="mother_job" id="mother_job" asp-for="mother_job" required>
+                                                <option selected disabled>Choisissez la profession de votre mére</option>
+                                                <option value="Agriculteur exploitant">Agriculteur exploitant</option>
+                                                <option value="Artisan, Décorateur, Peintre">Artisan, Décorateur, Peintre</option>
+                                                <option value="Autre métier non Renseigné">Autre métier non Renseigné</option>
+                                                <option value="Cadre d'Entreprise, Société (Gérant....">Cadre d'Entreprise, Société (Gérant....</option>
+                                                <option value="Cadre Fonction Publique">Cadre Fonction Publique</option>
+                                                <option value="Chef entreprise, Patron de socité">Chef entreprise, Patron de socité</option>
+                                                <option value="Commerçant et assimilé">Commerçant et assimilé</option>
+                                                <option value="Contremaître, Agent de maîtrise BTP">Contremaître, Agent de maîtrise BTP</option>
+                                                <option value="Décédé">Décédé</option>
+                                                <option value="Eleve,Etudiant">Eleve,Etudiant</option>
+                                                <option value="Employé d'Entreprise, Société, Associat.">Employé d'Entreprise, Société, Associat.</option>
+                                                <option value="Employé Fonction Public, Agent Civil">Employé Fonction Public, Agent Civil</option>
+                                                <option value="Employé Métier de Commerce">Employé Métier de Commerce</option>
+                                                <option value="Ingénieur, Cadre Technique d'Entreprise">Ingénieur, Cadre Technique d'Entreprise</option>
+                                                <option value="Ouvrier Non Qualifié type artisanat">Ouvrier Non Qualifié type artisanat</option>
+                                                <option value="Ouvrier  Non Qualifié type  Industrie">Ouvrier  Non Qualifié type  Industrie</option>
+                                                <option value="Ouvrier Qualifié Industrie">Ouvrier Qualifié Industrie</option>
+                                                <option value="Ouvrier Qualifié Transport, Manutention">Ouvrier Qualifié Transport, Manutention</option>
+                                                <option value="Personne sans activité professionnelle">Personne sans activité professionnelle</option>
+                                                <option value="Policier et militaire">Policier et militaire</option>
+                                                <option value="Professeur, Chercheur, Expert">Professeur, Chercheur, Expert</option>
+                                                <option value="Profession Education (Instituteur, Prof.">Profession Education (Instituteur, Prof.</option>
+                                                <option value="Profession Information, Arts, Spectacles">Profession Information, Arts, Spectacles</option>
+                                                <option value="Profession interm adm et commerc. entrep">Profession interm adm et commerc. entrep</option>
+                                                <option value="Profession Juridique (Juge, Avocat, ..">Profession Juridique (Juge, Avocat, ..</option>
+                                                <option value="Profession libérale">Profession libérale</option>
+                                                <option value="Profession lié à l'agriculture (Fellah,.">Profession lié à l'agriculture (Fellah,.</option>
+                                                <option value="Profession lié à la religion Imam, Fquih">Profession lié à la religion Imam, Fquih</option>
+                                                <option value="Profession Lié à l'Artisanat">Profession Lié à l'Artisanat</option>
+                                                <option value="Profession lié au Transport (Chauffeur..">Profession lié au Transport (Chauffeur..</option>
+                                                <option value="Profession Militaires, Policiers ...">Profession Militaires, Policiers ...</option>
+                                                <option value="Profession Publicité, Cinéma, Théatre...">Profession Publicité, Cinéma, Théatre...</option>
+                                                <option value="Profession Santé (Docteur, Infermier, AS">Profession Santé (Docteur, Infermier, AS</option>
+                                                <option value="Retraité de la Fonction Public">Retraité de la Fonction Public</option>
+                                                <option value="Retraité metier de Commerce">Retraité metier de Commerce</option>
+                                                <option value="Retraité secteur Agricole">Retraité secteur Agricole</option>
+                                                <option value="Sans activité professionnelle">Sans activité professionnelle</option>
+                                                <option value="Technicien, Electricien, Mécanique">Technicien, Electricien, Mécanique</option>
+                                            </select>
+                                            <div class="select-dropdown"></div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-row">
+                            <div class="name">Adresse</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" asp-for="parents_adress" name="parents_adress" id="parents_address" placeholder="Adresse des parents (complète)">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Téléphone</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" asp-for="parents_phone" type="tel" id="parents_phone" name="parents_phone" placeholder="Le téléphone de vos parents">
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+                        <div class="form-row m-b-50">
+                            <div class="name">  </div>
+                            <div class="value">
+                                <div class="row row-space">
+                                    <div class="col-6">
+                                        <a asp-controller="Reinscription" asp-action="step2" class="btn btn--radius-2 btn-secondary">Précédent</a>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <button type="submit" class="btn btn--radius-2 btn--blue">Suivant</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="../colorlib-regform-5/vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="../colorlib-regform-5/vendor/select2/select2.min.js"></script>
+    <script src="../colorlib-regform-5/vendor/datepicker/moment.min.js"></script>
+    <script src="../colorlib-regform-5/vendor/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->
+    <script src="../colorlib-regform-5/js/global.js"></script>
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
+<!-- end document-->
